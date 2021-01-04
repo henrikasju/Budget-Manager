@@ -10,7 +10,7 @@ iOS app for managing your monthly budget
 - View past transactions
 - Update, delete budgets and transactions
 - Add notes to budgets and transactions
-- Select preffered currency and date format
+- Select preferred currency and date format
 - Local Core Data database
 
 ## Current state of app
