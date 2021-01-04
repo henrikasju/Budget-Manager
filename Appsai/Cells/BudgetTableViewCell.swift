@@ -30,6 +30,7 @@ class BudgetTableViewCell: UITableViewCell {
         if givenBudget >= 0 {
             CategoryBudget.text = "+" + String(format: "%.2f", givenBudget)
             BudgetVerdictLabel.textColor = .systemGreen
+            BudgetVerdictLabel.text = "Available"
         }else {
             CategoryBudget.text = String(format: "%.2f", givenBudget)
             BudgetVerdictLabel.textColor = .systemRed

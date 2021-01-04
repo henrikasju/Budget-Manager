@@ -147,6 +147,7 @@ class TransactionViewController: UIViewController {
         }
         
         self.currentMonthTransactions = currentMonthTransactions
+        transactions = currentMonthTransactions.last!
     }
     
     func getTransactionsBetweenDates(startDate: Date, endDate: Date) -> [Transaction]{
@@ -244,8 +245,10 @@ extension TransactionViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             print(indexPath)
-            deleteTransaction(transaction: transactions[indexPath.row])
-            transactions.remove(at: indexPath.row)
+            deleteTransaction(transaction: self.currentMonthTransactions[currentDayIndex][indexPath.row])
+            self.currentMonthTransactions[currentDayIndex].remove(at: indexPath.row )
+            topBarVC?.viewWillAppear(true)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
